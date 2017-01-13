@@ -9,5 +9,9 @@ public class MyClass {
 		}
 		return x * y;
 	}
+	
+	public static void main(String []args){
+	
+	}
 
 }

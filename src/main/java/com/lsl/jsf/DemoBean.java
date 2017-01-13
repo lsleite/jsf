@@ -12,6 +12,8 @@ public class DemoBean {
 	private Date birthday;
 
 	public Date getBirthday() {
+		
+	
 		return birthday;
 	}
 
