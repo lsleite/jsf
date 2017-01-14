@@ -5,6 +5,14 @@
       version="3.0">
 	<display-name>JSF Webapp</display-name>
 	<context-param>
+		<param-name>bundle.path.name</param-name>
+		<param-value>com.lsl.i18n.messages</param-value>
+	</context-param>
+	<context-param>
+		<param-name>bundle.languages_available</param-name>
+		<param-value>com.lsl.i18n.languages_available</param-value>
+	</context-param>
+	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
 	</context-param>

@@ -2,11 +2,11 @@ package com.lsl.jsf;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import java.util.Locale;
+
 import org.junit.Test;
+
+import com.lsl.jsf.i18n.LanguageBean;
 
 public class MyClassTest {
 
@@ -15,6 +15,19 @@ public class MyClassTest {
 		MyClass tester = new MyClass();
 		tester.multiply(1000, 5);
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testStringToLocaleException(){
+		LanguageBean languageBean = new LanguageBean();
+		languageBean.stringToLocale("length_diff_5");
+	}
+	
+	@Test
+	public void testStringToLocale(){
+		LanguageBean languageBean = new LanguageBean();
+		Locale locale = languageBean.stringToLocale("pt_BR");
+		assertEquals("Returned Locale.toString() must match pt_BR", "pt_BR", locale.toString());
+	}
 
 	@Test
 	public void testMultiply() {
@@ -22,6 +35,7 @@ public class MyClassTest {
 		assertEquals("10 x 5 must be 50", 50, tester.multiply(10, 5));
 	}
 
+	/*
 	// Run once, e.g. Database connection, connection pool
 	@BeforeClass
 	public static void runOnceBeforeClass() {
@@ -45,5 +59,6 @@ public class MyClassTest {
 	public void runAfterTestMethod() {
 		System.out.println("@After - runAfterTestMethod");
 	}
+	*/
 
 }

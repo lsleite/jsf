@@ -9,9 +9,22 @@
 	<title>A Simple JavaServer Faces Registration Application</title>
 </h:head>
 <h:body>
+	<h:outputScript library="js" name="prime_i18n.js"></h:outputScript>
 	<h:form>
 		<h2>JSF Registration App</h2>
 		<p:calendar id="inline" value="#{demoBean.birthday}" mode="inline" />
 	</h:form>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="#{i18n['languages']}" />
+			<h:selectOneMenu value="#{language.localeCode}" onchange="submit()" >
+				<!-- TODO Define itemLabel here using i18n, maybe the itemList cannot be a Map  -->
+				<f:selectItems value="#{language.countriesInMap}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+	</h:form>
+
+
 </h:body>
 </html>
